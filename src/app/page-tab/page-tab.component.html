@@ -1,0 +1,23 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" >
+    <span style="font-size: 20px;">Page 1</span> 
+    <div fxLayout="row" fxLayoutAlign="space-between center" >
+    <mat-form-field>
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+            @for (food of foods; track food) {
+            <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+            }
+        </mat-select>
+        </mat-form-field>
+    <button mat-flat-button><mat-icon>refresh</mat-icon></button>
+    </div>
+</div>
+<mat-tab-group>
+    <mat-tab label="First"> 
+        <app-table-expandable></app-table-expandable>
+    </mat-tab>
+    <mat-tab label="Second">
+        <!-- <app-tree-example></app-tree-example> -->
+        <app-simple-table></app-simple-table>
+    </mat-tab>
+</mat-tab-group>
